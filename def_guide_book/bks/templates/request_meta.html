@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% if title is null %}
+	title = 'Time Site'
+{% endif %}
+{% block title %}title{% endblock title %}
+
+{% block content %}
+<table>
+	{% for rm in request_meta %}
+		{% for k, v in rm.items %}
+			<tr><td>'{{ k }}'</td><td>'{{ v }}'</td></tr>
+		{% endfor %}
+	{% endfor %}
+</table>
+{% endblock content %}

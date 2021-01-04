@@ -1,0 +1,16 @@
+{% extends "books/base.html" %}
+{% block content %}
+	{% for author in authors %}
+
+		<article class="media content-section">
+		  <div class="media-body">
+		    <div class="article-metadata">
+		      <a class="mr-2" href="#">{{ author.nickname }}</a>
+		    </div>
+		    <h2><a class="article-title" href="#">{{ author.birthdate }}</a></h2>
+		    <p class="article-content">{{ author.firstname }} with {{ author.lastname }}</p>
+		  </div>
+		</article>
+
+	{% endfor %}
+{% endblock content %}
