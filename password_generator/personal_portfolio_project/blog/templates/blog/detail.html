@@ -1,5 +1,8 @@
-{{ post.title }}
-<br>
-{{ post.description }}
-<hr>
-{{ post.date_posted }}
+{% extends 'portfolio/base.html' %}
+{% block content %}
+	<h1>{{ post.title }}</h1>
+	<hr>
+	<h3>---{{ post.date_posted|date:'d-m-Y' }}---</h3>
+	<br>
+	<p>{{ post.description }}</p>
+{% endblock %}
