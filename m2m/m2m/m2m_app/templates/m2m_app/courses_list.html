@@ -1,0 +1,17 @@
+{% extends 'm2m_app/base.html' %}
+
+{% block content %}
+
+<h1>Courseslist:</h1>
+<ul>
+	{% for course in courses %}
+		<li><a href="{% url 'course_detail' course.id %}">{{ course }}</a></li>
+	{% endfor %}
+</ul>
+
+<form method="GET" action="{% url 'course_add' %}">
+	{% csrf_token %}
+	<button class="submit">Add course</button>
+</form>
+
+{% endblock %}

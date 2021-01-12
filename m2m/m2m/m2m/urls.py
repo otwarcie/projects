@@ -1,4 +1,4 @@
-"""todowoo URL Configuration
+"""m2m URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.1/topics/http/urls/
@@ -15,23 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from todo import views
+from m2m_app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-
-    # Auth
-    path('signup/', views.signupuser, name='signupuser'),
-	path('logout/', views.logoutuser, name='logoutuser'),
-	path('login/', views.loginuser, name='loginuser'),
-
-
-    # Todos
-    path('', views.home, name='home'),
-    path('current/', views.currenttodos, name='currenttodos'),
-    path('completed/', views.completedtodos, name='completedtodos'),
-    path('todo/<int:todo_pk>', views.viewtodo, name='viewtodo'),
-    path('todo/<int:todo_pk>/complete', views.completetodo, name='completetodo'),
-    path('todo/<int:todo_pk>/delete', views.deletetodo, name='deletetodo'),
-    path('create/', views.createtodo, name='createtodo')
+    path('', views.courses_list, name='courses_list'),
+    path('students/', views.students_list, name='students_list'),
+    path('students/<int:student_pk>', views.student_detail, name='student_detail'),
+    path('students/add', views.student_add, name='student_add'),
+    path('students/<int:student_pk>/enroll', views.course_enroll, name='course_enroll'),
+    path('courses/<int:course_pk>', views.course_detail, name='course_detail'),
+    path('courses/add', views.course_add, name='course_add'),
+    path('courses/<int:course_pk>/enroll', views.student_enroll, name='student_enroll'),
 ]

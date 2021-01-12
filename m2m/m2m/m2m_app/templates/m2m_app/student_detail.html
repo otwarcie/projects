@@ -1,0 +1,13 @@
+{% extends 'm2m_app/base.html' %}
+
+{% block content %}
+<p>
+<h3>{{ student }}:</h3>
+<ul>
+	{% for enroll in enrolls %}
+		<li>{{ enroll }}</li>
+	{% endfor %}
+</ul>
+
+</p>
+{% endblock %}

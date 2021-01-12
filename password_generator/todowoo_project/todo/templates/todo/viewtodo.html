@@ -16,16 +16,18 @@
 
 	</form>
 
+	<form method="POST" action="{% url 'completetodo' todo.id %}">
 
-
-<!-- 	<h2>{{ error }}</h2>
-
-	<form method="POST">
 		{% csrf_token %}
-		{{ form.as_p }}
-		<button type="submit">Ok</button>
-	</form>
- -->
+		<button type="submit">Completed</button>
 
+	</form>
+
+	<form method="POST" action="{% url 'deletetodo' todo.id %}">
+
+		{% csrf_token %}
+		<button type="error">Delete</button>
+
+	</form>
 
 {% endblock %}
